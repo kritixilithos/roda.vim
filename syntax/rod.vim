@@ -1,8 +1,11 @@
 syntax keyword RODAliteral TRUE FALSE ENV
 highlight default link RODAliteral Constant
 
-syntax match RODAnumber /\d\+\(\.\d\*\)\?/
+syntax match RODAnumber /\d\+/
 highlight default link RODAnumber Number
+
+syntax match RODAfloat /\d\+\.\d\+/
+highlight default link RODAfloat Float
 
 syntax region RODAstring start=+"+  skip=+\\"+  end=+"+
 highlight default link RODAstring String
