@@ -21,3 +21,9 @@ highlight default link RODArepeat Repeat
 
 syntax keyword RODAstatement return break
 highlight default link RODAstatement Statement
+
+syntax match RODAoperator /[\[\]|#_\*()${}~]\|\.\.\.\?\|[!><]=\?\|[+\*\/\-~\.]\?=\|:\(\w\)\@!/
+highlight default link RODAoperator Operator
+
+syntax keyword RODAType boolean list map number string integer floating namespace
+highlight default link RODAType Type
