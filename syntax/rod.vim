@@ -13,9 +13,6 @@ highlight default link RODAfloat Float
 syntax region RODAstring start=+"+  skip=+\\"+  end=+"+
 highlight default link RODAstring String
 
-syntax region RODAcomment start=+\/\*+  end=+*\/+
-highlight default link RODAcomment Comment
-
 syntax keyword RODAconditional if done do else unless
 highlight default link RODAconditional Conditional
 
@@ -33,6 +30,9 @@ highlight default link RODAkeyword Keyword
 
 syntax match RODAoperatorSymbol /[\[\]|#_\*()${}~&\/]\|\.\.\.\?\|[!><]=\?\|[+\*\/\-~\.]\?=\|:\(\w\)\@!\|:=/
 highlight default link RODAoperatorSymbol RODAoperator
+
+syntax region RODAcomment start=+\/\*+  end=+*\/+
+highlight default link RODAcomment Comment
 
 syntax keyword RODAoperatorKeyword is reflect typeof
 highlight default link RODAoperatorKeyword RODAoperator
