@@ -1,10 +1,13 @@
-syntax keyword RODAliteral TRUE FALSE ENV
-highlight default link RODAliteral Constant
+syntax keyword RODAconstant ENV
+highlight default link RODAconstant Constant
 
-syntax match RODAnumber /\d\+/
+syntax keyword RODAboolean TRUE FALSE
+highlight default link RODAboolean Boolean
+
+syntax match RODAnumber /-\?\d\+/
 highlight default link RODAnumber Number
 
-syntax match RODAfloat /\d\+\.\d\+/
+syntax match RODAfloat /-\?\d\+\.\d\+\([eE][+-]\d\+\)\?/
 highlight default link RODAfloat Float
 
 syntax region RODAstring start=+"+  skip=+\\"+  end=+"+
@@ -13,17 +16,31 @@ highlight default link RODAstring String
 syntax region RODAcomment start=+\/\*+  end=+*\/+
 highlight default link RODAcomment Comment
 
-syntax keyword RODAconditional if done do else
+syntax keyword RODAconditional if done do else unless
 highlight default link RODAconditional Conditional
 
-syntax keyword RODArepeat for while
+syntax keyword RODArepeat for while until
 highlight default link RODArepeat Repeat
 
-syntax keyword RODAstatement return break
+syntax keyword RODAstatement return break continue
 highlight default link RODAstatement Statement
 
-syntax match RODAoperator /[\[\]|#_\*()${}~]\|\.\.\.\?\|[!><]=\?\|[+\*\/\-~\.]\?=\|:\(\w\)\@!/
+syntax keyword RODAexception try catch
+highlight default link RODAexception Exception
+
+syntax keyword RODAkeyword in or not del record and function
+highlight default link RODAkeyword Keyword
+
+syntax match RODAoperatorSymbol /[\[\]|#_\*()${}~&\/]\|\.\.\.\?\|[!><]=\?\|[+\*\/\-~\.]\?=\|:\(\w\)\@!\|:=/
+highlight default link RODAoperatorSymbol RODAoperator
+
+syntax keyword RODAoperatorKeyword is reflect typeof
+highlight default link RODAoperatorKeyword RODAoperator
+
 highlight default link RODAoperator Operator
 
-syntax keyword RODAType boolean list map number string integer floating namespace
-highlight default link RODAType Type
+syntax keyword RODAtype boolean list map number string integer floating namespace
+highlight default link RODAtype Type
+
+syntax match RODAidentifier /\(^\s*\)\zs\(\w*\)\ze\(\s*:=\)/
+highlight default link RODAidentifier Identifier
