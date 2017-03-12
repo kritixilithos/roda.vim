@@ -1,1 +1,1 @@
-autocmd BufRead,BufNewFile *.rod set filetype=roda
+autocmd BufRead,BufNewFile *.rod,*.röd set filetype=roda
