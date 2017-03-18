@@ -1,4 +1,4 @@
-syntax keyword RODAconstant ENV
+syntax keyword RODAconstant ENV STDIN STDOUT STDERR
 highlight default link RODAconstant Constant
 
 syntax keyword RODAboolean TRUE FALSE
