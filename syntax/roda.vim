@@ -11,6 +11,11 @@ syntax match RODAfloat /-\?\d\+\.\d\+\([eE][+-]\d\+\)\?/
 highlight default link RODAfloat Float
 
 syntax region RODAstring start=+"+  skip=+\\"+  end=+"+
+highlight default link RODAnormString RODAstring
+
+syntax region RODAbackString start=+`+  skip=+\\`+  end=+`+
+highlight default link RODAbackString RODAstring
+
 highlight default link RODAstring String
 
 syntax keyword RODAconditional if done do else unless
