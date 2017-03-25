@@ -1,4 +1,4 @@
-" Vim indent file
+" Vim syntax file
 " Language:	Röda
 " Maintainer:	Kritixi Lithos
 " Last Change:	2017 Mar 25
@@ -41,7 +41,10 @@ highlight default link RODAkeyword Keyword
 syntax match RODAoperatorSymbol /[\[\]|#_\*()${}~&\/]\|\.\.\.\?\|[!><]=\?\|[+\*\/\-~\.]\?=\|:\(\w\)\@!\|:=/
 highlight default link RODAoperatorSymbol RODAoperator
 
-syntax region RODAcomment start=+\/\*+  end=+*\/+
+syntax match RODAshebang /^#!.\+/
+highlight default link RODAshebang RODAcomment
+
+syntax region RODAcomment start=+\/\*+  end=+*\/+ contains=RODAtodo
 highlight default link RODAcomment Comment
 
 syntax keyword RODAoperatorKeyword is reflect typeof
@@ -54,3 +57,9 @@ highlight default link RODAtype Type
 
 syntax match RODAidentifier /\(^\s*\)\zs\(\w*\)\ze\(\s*:=\)/
 highlight default link RODAidentifier Identifier
+
+syntax keyword RODAtodo TODO FIXME contained
+highlight default link RODAtodo TODO
+
+syntax keyword RODAcommand assignGlobal assignGlobalType assignType bufferedExec bytesToString cd chr count createGlobal createGlobalType createType currentTime error errprint exec exportGlobal exportGlobalType false fileExists fileLength filePermissions getenv head identity import importNamespace indexOf interleave isDirectory isFile json keys loadResourceLines localImport localImportNamespace lowerCase ls match mimeType name ord parseFloating parseInteger peek print pull push pwd randomBoolean randomFloating randomInteger randomize readLines replace require safeLocalImport saveResource search seq server shift sort split splitMany stream stringToBytes strsize tail thread true tryPeek tryPull undefine uniq unorderedCount unorderedUniq upperCase writeStrings
+highlight default link RODAcommand Statement

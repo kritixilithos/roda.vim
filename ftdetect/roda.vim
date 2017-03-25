@@ -1,4 +1,4 @@
-" Vim indent file
+" Vim filetype detect file
 " Language:	Röda
 " Maintainer:	Kritixi Lithos
 " Last Change:	2017 Mar 25
