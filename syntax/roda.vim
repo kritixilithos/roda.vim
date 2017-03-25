@@ -1,3 +1,8 @@
+" Vim indent file
+" Language:	Röda
+" Maintainer:	Kritixi Lithos
+" Last Change:	2017 Mar 25
+
 syntax keyword RODAconstant ENV STDIN STDOUT STDERR
 highlight default link RODAconstant Constant
 
