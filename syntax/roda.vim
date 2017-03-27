@@ -18,7 +18,7 @@ highlight default link RODAfloat Float
 syntax region RODAstring start=+"+  skip=+\\"+  end=+"+
 highlight default link RODAnormString RODAstring
 
-syntax region RODAbackString start=+`+  skip=+\\`+  end=+`+
+syntax region RODAbackString start=+`+ end=+`+
 highlight default link RODAbackString RODAstring
 
 highlight default link RODAstring String
