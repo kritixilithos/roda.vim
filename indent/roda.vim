@@ -1,7 +1,7 @@
 " Vim indent file
 " Language:	Röda
 " Maintainer:	Kritixi Lithos
-" Last Change:	2017 Mar 25
+" Last Change:	2017 Apr 09
 
 
 if exists("b:did_indent")
@@ -25,7 +25,7 @@ function! GetRodaIndent()
 	endif
 
 	" unindent if line begins done or else
-	if getline(v:lnum) =~ '\s*\(done\|else\|}\)\s*$'
+	if getline(v:lnum) =~ '^\s*\(done\|else\|}\)\s*$'
 		let ind = ind - &sw
 	endif
 
