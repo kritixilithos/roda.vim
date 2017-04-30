@@ -1,9 +1,9 @@
 " Vim syntax file
 " Language:	Röda
 " Maintainer:	Kritixi Lithos
-" Last Change:	2017 Mar 25
+" Last Change:	2017 Apr 30
 
-syntax keyword RODAconstant ENV STDIN STDOUT STDERR
+syntax keyword RODAconstant ENV STDIN STDOUT STDERR PI E
 highlight default link RODAconstant Constant
 
 syntax keyword RODAboolean TRUE FALSE
@@ -61,5 +61,6 @@ highlight default link RODAidentifier Identifier
 syntax keyword RODAtodo TODO FIXME contained
 highlight default link RODAtodo TODO
 
-syntax keyword RODAcommand assignGlobal assignGlobalType assignType bufferedExec bytesToString cd chr count createGlobal createGlobalType createType currentTime error errprint exec exportGlobal exportGlobalType false fileExists fileLength filePermissions getenv head identity import importNamespace indexOf interleave isDirectory isFile json keys loadResourceLines localImport localImportNamespace lowerCase ls match mimeType name ord parseFloating parseInteger peek print pull push pwd randomBoolean randomFloating randomInteger randomize readLines replace require safeLocalImport saveResource search seq server shift sort split splitMany stream stringToBytes strsize tail thread true tryPeek tryPull undefine uniq unorderedCount unorderedUniq upperCase writeStrings
+syntax keyword RODAcommand assignGlobal assignGlobalType assignType bufferedExec bytesToString cd chars chr concat count createGlobal createGlobalType createType currentTime enum error errprint exec exportGlobal exportGlobalType false fileExists fileLength filePermissions filter getLine getenv grep head identity ifStdIn ifStdOut import importNamespace indexOf inputMode interactive interleave isDirectory isFile json keys kwColor loadResourceLines localImport localImportNamespace lowerCase ls makeSeq match mimeType mode name ord parseFloating parseInteger peek print product pull push pwd randomBoolean randomFloating randomInteger randomize readLines reduce replace require reverse safeLocalImport saveResource search seq server shift slide sort split splitMany stream stringToBytes strsize sum tail the thread true tryPeek tryPull undefine uniq unorderedCount unorderedUniq unpull upperCase varColor writeStrings
+
 highlight default link RODAcommand Statement
