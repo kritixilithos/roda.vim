@@ -1,7 +1,7 @@
 " Vim syntax file
 " Language:	Röda
 " Maintainer:	Kritixi Lithos
-" Last Change:	2017 Apr 30
+" Last Change:	2017 May 14
 
 syntax keyword RODAconstant ENV STDIN STDOUT STDERR PI E
 highlight default link RODAconstant Constant
@@ -18,8 +18,13 @@ highlight default link RODAfloat Float
 syntax region RODAstring start=+"+  skip=+\\"+  end=+"+
 highlight default link RODAnormString RODAstring
 
-syntax region RODAbackString start=+`+ end=+`+
+syntax region RODAbackString start=+`+ end=+`+ contains=RODAdollarVariable
 highlight default link RODAbackString RODAstring
+
+" TODO: `${expressions}`
+
+syntax match RODAdollarVariable /\$\w\+/ contained
+highlight default link RODAdollarVariable Identifier
 
 highlight default link RODAstring String
 
