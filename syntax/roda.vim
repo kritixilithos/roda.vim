@@ -1,7 +1,7 @@
 " Vim syntax file
 " Language:	Röda
 " Maintainer:	Kritixi Lithos
-" Last Change:	2017 May 14
+" Last Change:	2017 Aug 04
 
 syntax keyword RODAconstant ENV STDIN STDOUT STDERR PI E
 highlight default link RODAconstant Constant
@@ -23,7 +23,7 @@ highlight default link RODAbackString RODAstring
 
 " TODO: `${expressions}`
 
-syntax match RODAdollarVariable /\$\w\+/ contained
+syntax match RODAdollarVariable /\$\w\*/ contained
 highlight default link RODAdollarVariable Identifier
 
 highlight default link RODAstring String
@@ -43,7 +43,7 @@ highlight default link RODAexception Exception
 syntax keyword RODAkeyword in or not del record and function
 highlight default link RODAkeyword Keyword
 
-syntax match RODAoperatorSymbol /[\[\]|#_\*()${}~&\/]\|\.\.\.\?\|[!><]=\?\|[+\*\/\-~\.]\?=\|:\(\w\)\@!\|:=/
+syntax match RODAoperatorSymbol /[\[\]|#_\*()${}~&\/]\|\.\.\.\?\|[!><]=\?\|[+\*\/\-~\.]\?=\|:\(\w\)\@!\|:=\|new/
 highlight default link RODAoperatorSymbol RODAoperator
 
 syntax match RODAshebang /^#!.\+/
@@ -67,5 +67,7 @@ syntax keyword RODAtodo TODO FIXME contained
 highlight default link RODAtodo TODO
 
 syntax keyword RODAcommand assignGlobal assignGlobalType assignType bufferedExec bytesToString cd chars chr concat count createGlobal createGlobalType createType currentTime enum error errprint exec exportGlobal exportGlobalType false fileExists fileLength filePermissions filter getLine getenv grep head identity ifStdIn ifStdOut import importNamespace indexOf inputMode interactive interleave isDirectory isFile json keys kwColor loadResourceLines localImport localImportNamespace lowerCase ls makeSeq match mimeType mode name ord parseFloating parseInteger peek print product pull push pwd randomBoolean randomFloating randomInteger randomize readLines reduce replace require reverse safeLocalImport saveResource search seq server shift slide sort split splitMany stream stringToBytes strsize sum tail the thread true tryPeek tryPull undefine uniq unorderedCount unorderedUniq unpull upperCase varColor writeStrings
-
 highlight default link RODAcommand Statement
+
+syntax keyword RODAtypedef self
+highlight default link RODAtypedef Typedef
