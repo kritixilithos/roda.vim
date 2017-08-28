@@ -1,7 +1,7 @@
 " Vim indent file
 " Language:	Röda
 " Maintainer:	Kritixi Lithos
-" Last Change:	2017 Aug 04
+" Last Change:	2017 Aug 28
 
 
 if exists("b:did_indent")
@@ -28,9 +28,9 @@ function! GetRodaIndent()
 	endif
 
 	" unindent if line begins done or else or a closing block or catch exceptionName
-	if getline(v:lnum) =~ '^\s*\(done\|else\|}\)\s*$'
+	if getline(v:lnum) =~ '^\s*\(done\|else\|}\)'
 		let ind = ind - &sw
-	elseif getline(v:lnum) =~ '^\s*catch\s*\w\+\s*$'
+	elseif getline(v:lnum) =~ '^\s*catch\s*\w\+'
 		let ind = ind - &sw
 	endif
 
